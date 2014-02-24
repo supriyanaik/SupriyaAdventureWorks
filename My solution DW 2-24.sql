@@ -32,7 +32,7 @@ UNION ALL
           )
 SELECT   A1.PostalCode,
          COUNT (DISTINCT A1.BuyerKey)	AS DistinctBuyers,
-         AVG(A1.REVENUE)                AS Average_Order_Value,
+         AVG(A1.REVENUE/A1.OrderQuantity)         AS Average_Order_Value,
          SUM(A1.REVENUE)                AS Total_Revenue,
          MAX(A2.ProductCategory)		AS MostPopular_ProductCategory
 FROM     C1 AS A1
